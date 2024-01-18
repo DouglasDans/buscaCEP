@@ -1,8 +1,13 @@
+import BarraPesquisa from '@/components/BarraPesquisa/BarraPesquisa'
 import { Box, Button } from '@mui/joy'
 
 export default function Home() {
   return (
-    <Box sx={styles.mainContainer}>a</Box>
+    <Box sx={styles.mainContainer}>
+      <Box>
+        <BarraPesquisa/>
+      </Box>
+    </Box>
   )
 }
 
