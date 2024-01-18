@@ -1,8 +1,9 @@
+import ThemeRegistry from '@/theme/ThemeRegistry'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import {Ubuntu } from 'next/font/google'
+import Head from 'next/head'
 
-const inter = Inter({ subsets: ['latin'] })
+const ubuntu = Ubuntu({ subsets: ['latin-ext'], weight: ['300', '400', '500', '700'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-BR" data-color-scheme="dark">
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <body className={ubuntu.className}>
+        <ThemeRegistry>
+          {children}
+        </ThemeRegistry>
+      </body>
     </html>
   )
 }
