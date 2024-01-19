@@ -1,21 +1,33 @@
-import { Api } from '@/api/api'
+'use client'
+
 import { Box, Input } from '@mui/joy'
-import { log } from 'console'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 type Props = {}
 
 export default function BarraPesquisa({}: Props) {
 
-   const api = new Api();
+   const [cepData, setCepData] = useState([])
 
-   api.getContent("cep", '08412180').then(res => {
-      console.log(res)
-   })
+   function handleSubmit(e : any) {
+      e.preventDefault()
+      console.log(e.target.cep.value);
+      getDataFromAPI(e.target.cep.value)
+   }
+
+   function getDataFromAPI(cep : string) {
+      fetch(`http://localhost:3000/get?request=cep&params=${cep}`)
+      .then((res : any) => res.json()).then(json => setCepData(json))
+   }
+   
+   console.log(cepData)
 
    return (
       <Box width={'800px'} height={'45px'}>
-         <Input variant="soft" placeholder='Digite o CEP...' size="lg" />
+         <form onSubmit={handleSubmit}>
+            <Input  name='cep' variant="soft" placeholder='Digite o CEP...' size="lg" />
+            <button type='submit'>a</button>
+         </form>
       </Box>
    )
 }
