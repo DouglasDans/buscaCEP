@@ -26,7 +26,7 @@ export default function BarraPesquisa({}: Props) {
       <Box width={'800px'} height={'45px'}>
          <form onSubmit={handleSubmit}>
             <Input  name='cep' variant="soft" placeholder='Digite o CEP...' size="lg" />
-            <button type='submit'>a</button>
+            {/* <button type='submit'>a</button> */}
          </form>
       </Box>
    )
