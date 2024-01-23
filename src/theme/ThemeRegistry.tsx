@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react';
-import theme from './theme';
 import { CssBaseline, CssVarsProvider } from '@mui/joy';
 
 type Props = {children : any}
@@ -19,7 +18,7 @@ export default function ThemeRegistry({ children }: Props) {
   
 
   return (
-    <CssVarsProvider defaultMode="dark" theme={theme} disableNestedContext>
+    <CssVarsProvider defaultMode="dark" disableNestedContext>
       <CssBaseline />
       {children}
     </CssVarsProvider>

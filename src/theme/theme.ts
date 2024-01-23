@@ -27,10 +27,6 @@ const theme = extendTheme({
                level2: "#171717", // cor dos cards - color2
                level3:  "#222222" // cor dos cards - color3
             },
-            border: {
-               card: '#222222', // color3
-               sideMenu: '#2B2B2B' // color4
-            },
             text: {
                primary: "#DEDEDE",
                secondary: '#ABABAB',
