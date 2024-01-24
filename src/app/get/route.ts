@@ -8,8 +8,6 @@ export async function GET( request : NextRequest ){
    const searchParams = request.nextUrl.searchParams
    const requestType = searchParams.get('request')
    const params = searchParams.get('params')
-
-   console.log(requestType, params);
    
    const res = await fetch((API_PATH + `/${requestType}/` + `?${requestType}=${params}`), {
       method: 'GET',
