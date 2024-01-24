@@ -4,29 +4,15 @@ import { Box, Input } from '@mui/joy'
 import React, { useEffect, useState } from 'react'
 import verifyCepAndFetch from "@/components/BarraPesquisa/AcessoAPI";
 
-type Props = {}
+type Props = {
+   setCepNumber(cep : string) : void
+}
 
-export default function BarraPesquisa({}: Props) {
-
-   const [cepNumber, setCepNumber] = useState('')
-   const [cepData, setCepData] = useState([])
-
+export default function BarraPesquisa({setCepNumber}: Props) {
    function handleSubmit(e : any) {
       e.preventDefault()
       setCepNumber(e.target.cep.value)
    }
-
-   async function getDataFromCEP(cep : string) {
-      await verifyCepAndFetch(cep).then((response : any) => {
-         setCepData(response)
-      })
-   }
-
-   useEffect(() => {
-      Promise.resolve(getDataFromCEP(cepNumber))
-   }, [cepNumber]);
-
-   console.log(cepNumber, cepData)
 
    return (
       <Box width={'800px'} height={'45px'}>

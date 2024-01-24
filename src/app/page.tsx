@@ -1,16 +1,36 @@
+'use client'
+
 import BarraPesquisa from '@/components/BarraPesquisa/BarraPesquisa'
 import CepDadosGrid from '@/components/CepDadosGrid/CepDadosGrid'
 import { Box, Button } from '@mui/joy'
+import {useEffect, useState} from "react";
+import verifyCepAndFetch from "@/components/BarraPesquisa/AcessoAPI";
 
 export default function Home() {
+
+  const [cepNumber, setCepNumber] = useState('01001000')
+  const [cepData, setCepData] = useState([])
+  const [loading, setLoading] = useState(true)
+  async function getDataFromCEP(cep : string) {
+    await verifyCepAndFetch(cep).then((response : any) => {
+      setCepData(response)
+      setLoading(false)
+    })
+  }
+
+  useEffect(() => {
+    Promise.resolve(getDataFromCEP(cepNumber))
+    setLoading(true)
+  }, [cepNumber]);
+
   return (
     <Box sx={styles.mainContainer}>
       <Box display={'flex'} gap={'0.5rem'} flexDirection={'column'}>
 
-        <BarraPesquisa/>
+        <BarraPesquisa setCepNumber={setCepNumber}/>
 
         <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
-          <CepDadosGrid/>
+          <CepDadosGrid response={cepData} loading={loading}/>
         </Box>
       </Box>
     </Box>
@@ -27,7 +47,7 @@ const styles = {
     alignItems: 'center'
   },
   cepContainer: {
-    width:'100%',
+    width:'800px',
     height: '300px',
     borderRadius: 'var(--joy-radius-sm)'
   }
