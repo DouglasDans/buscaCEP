@@ -9,7 +9,7 @@ export default function Home() {
 
         <BarraPesquisa/>
 
-        <Box sx={styles.cepContainer} p={2} bgcolor={'background.level2'}>
+        <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
           <CepDadosGrid/>
         </Box>
       </Box>

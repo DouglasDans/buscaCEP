@@ -1,4 +1,4 @@
-import { Delete, Home, HomeRounded } from '@mui/icons-material'
+import { HomeRounded } from '@mui/icons-material'
 import { Box, Typography } from '@mui/joy'
 import React from 'react'
 

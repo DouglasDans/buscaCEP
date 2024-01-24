@@ -1,4 +1,4 @@
-import { Box, Skeleton } from '@mui/joy'
+import { Box } from '@mui/joy'
 import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
 
@@ -6,7 +6,7 @@ type Props = {}
 
 export default function CepDadosGrid({}: Props) {
    return (
-      <Box bgcolor={'background.level1'} sx={styles.gridCepDados} p={2}>
+      <Box bgcolor={'background.level2'} sx={styles.gridCepDados} p={2}>
          <ItemCep/>
          <ItemCep/>
          <ItemCep/>
