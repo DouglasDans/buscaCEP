@@ -1,21 +1,10 @@
 import { Box } from '@mui/joy'
 import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
-
-type Response = {
-    logradouro : string
-    bairro : string
-    cidade : {
-        nome : string
-    }
-    estado : {
-        sigla : string
-    },
-    cep : string
-}
+import ICepResponse from "@/interfaces/ICepResponse";
 
 type Props = {
-    response : Response
+    response : ICepResponse
     loading : boolean
 }
 
@@ -29,7 +18,7 @@ export default function CepDadosGrid({response, loading}: Props) {
     }
 }
 
-function render(response : Response) {
+function render(response : ICepResponse) {
     if (Object.values(response).length === 0){
         console.log(Object.values(response).length === 0)
         return (
