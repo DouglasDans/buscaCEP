@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default class ApiHandler {
    private readonly API_BASE : string = "https://www.cepaberto.com/api/v3";
-   private readonly API_KEY : string = process.env.API_KEY;
+   private readonly API_KEY : string = process.env.API_KEY || "";
    private handler : any;
 
    constructor(){

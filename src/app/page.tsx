@@ -1,8 +1,6 @@
 import BarraPesquisa from '@/components/BarraPesquisa/BarraPesquisa'
 import CepDadosGrid from '@/components/CepDadosGrid/CepDadosGrid'
 import { Box } from '@mui/joy'
-import {useEffect, useState} from "react";
-import verifyCepAndFetch from "@/api/ApiAcesso";
 
 import styles from './styles';
 import ApiHandler from '@/api/ApiHandler';
