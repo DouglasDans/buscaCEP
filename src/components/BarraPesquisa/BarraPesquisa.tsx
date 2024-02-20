@@ -20,6 +20,7 @@ export default function BarraPesquisa() {
             <Input
                 endDecorator={<InputDecoratorButtons/>}
                 fullWidth
+                type='number'
                 name='cep'
                 variant="soft"
                 placeholder='Digite o CEP...'
