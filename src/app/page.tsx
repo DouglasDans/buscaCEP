@@ -1,52 +1,27 @@
-'use client'
-
 import BarraPesquisa from '@/components/BarraPesquisa/BarraPesquisa'
 import CepDadosGrid from '@/components/CepDadosGrid/CepDadosGrid'
 import { Box } from '@mui/joy'
 import {useEffect, useState} from "react";
-import verifyCepAndFetch from "@/components/BarraPesquisa/AcessoAPI";
+import verifyCepAndFetch from "@/api/ApiAcesso";
 
-export default function Home() {
+import styles from './styles';
+import ApiHandler from '@/api/ApiHandler';
 
-  const [cepNumber, setCepNumber] = useState('01001000')
-  const [cepData, setCepData] = useState<any>()
-  const [loading, setLoading] = useState(true)
-  async function getDataFromCEP(cep : string) {
-    await verifyCepAndFetch(cep).then((response : any) => {
-      setCepData(response)
-      setLoading(false)
-    })
-  }
 
-  useEffect(() => {
-    Promise.resolve(getDataFromCEP(cepNumber))
-    setLoading(true)
-  }, [cepNumber]);
+export default async function Home() {
+
+  const api = new ApiHandler();
+  const responseAPIData = await api.request("get", "cep", "01001000");
 
   return (
     <Box sx={styles.mainContainer}>
       <Box display={'flex'} gap={'0.5rem'} flexDirection={'column'}>
-        <BarraPesquisa setCepNumber={setCepNumber}/>
+        <BarraPesquisa/>
         <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
-          <CepDadosGrid response={cepData} loading={loading}/>
+          <CepDadosGrid response={responseAPIData}/>
         </Box>
       </Box>
     </Box>
   )
 }
 
-const styles = {
-  mainContainer:{
-    // bgColor: 'background.body',
-    width: '100vw',
-    height: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  cepContainer: {
-    width:'800px',
-    height: '300px',
-    borderRadius: 'var(--joy-radius-sm)'
-  }
-}

@@ -1,17 +1,17 @@
 'use client'
 
-import {Box, Button, Container, Input} from '@mui/joy'
+import {Box, Button, Input} from '@mui/joy'
 import React from 'react'
 import {SearchRounded} from "@mui/icons-material";
 
-type Props = {
-   setCepNumber(cep : string) : void
-}
+import { useRouter } from 'next/navigation'
 
-export default function BarraPesquisa({setCepNumber}: Props) {
+export default function BarraPesquisa() {
+   const router = useRouter()
+
    function handleSubmit(e : any) {
       e.preventDefault()
-      setCepNumber(e.target.cep.value)
+      router.push(`/${e.target.cep.value}`)
    }
 
    return (
@@ -32,7 +32,7 @@ export default function BarraPesquisa({setCepNumber}: Props) {
 function InputDecoratorButtons() {
    return (
        <Box sx={styles.btnContainer}>
-          <Button sx={styles.button} variant={"plain"} type='submit'>
+          <Button itemType={'submit'} sx={styles.button} variant={"plain"} type='submit'>
              <SearchRounded/>
           </Button>
        </Box>

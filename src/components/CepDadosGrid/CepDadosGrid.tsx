@@ -5,24 +5,12 @@ import ICepResponse from "@/interfaces/ICepResponse";
 
 type Props = {
     response : ICepResponse
-    loading : boolean
 }
 
-export default function CepDadosGrid({response, loading}: Props) {
-    console.log(response)
-
-    if (!loading){
-        return render(response)
-    } else {
-        return ('loading')
-    }
-}
-
-function render(response : ICepResponse) {
+export default function CepDadosGrid({response}: Props) {
     if (Object.values(response).length === 0){
-        console.log(Object.values(response).length === 0)
         return (
-            <Box>aaaaaa</Box>
+            <Box>Não encontrado</Box>
         )
     } else {
         return (
