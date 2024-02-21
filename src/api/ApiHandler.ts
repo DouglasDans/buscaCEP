@@ -15,7 +15,7 @@ export default class ApiHandler {
       })
    }
 
-   public async request(method : "get", requestType : string, params : string) {
+   public async request(method : "get", requestType : string, params : string, body? : object) {
       const endpoint : string = `/${requestType}/?${requestType}=${params}`
 
       return await this.handler[method](endpoint)

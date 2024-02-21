@@ -1,13 +1,13 @@
 'use client'
 
 import {Box, Button, Input} from '@mui/joy'
-import React from 'react'
+import React, { useState } from 'react'
 import {SearchRounded} from "@mui/icons-material";
-
 import { useRouter } from 'next/navigation'
 
 export default function BarraPesquisa() {
    const router = useRouter()
+   const [cep, setCep] = useState('')
 
    function handleSubmit(e : any) {
       e.preventDefault()
@@ -20,6 +20,8 @@ export default function BarraPesquisa() {
             <Input
                 endDecorator={<InputDecoratorButtons/>}
                 fullWidth
+                onChange={(e) => {setCep(e.target.value)}}
+                value={cep}
                 type='number'
                 name='cep'
                 variant="soft"
