@@ -8,7 +8,7 @@ import ApiHandler from "@/api/ApiHandler";
 export default async function Page({ params }: { params: { cep: string } }) {
   
   const api = new ApiHandler();
-  const responseAPIData = await api.request("get", "cep", params.cep);
+  const responseAPIData = await api.request("get", params.cep);
 
   return (
       <Box sx={styles.mainContainer}>

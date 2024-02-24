@@ -9,7 +9,7 @@ import ApiHandler from '@/api/ApiHandler';
 export default async function Home() {
 
   const api = new ApiHandler();
-  const responseAPIData = await api.request("get", "cep", "01001000");
+  const responseAPIData = await api.request("get", "01001000");
 
   return (
     <Box sx={styles.mainContainer}>

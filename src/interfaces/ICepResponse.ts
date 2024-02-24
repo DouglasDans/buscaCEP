@@ -1,11 +1,12 @@
 export default interface ICepResponse {
-    logradouro : string
-    bairro : string
-    cidade : {
-        nome : string
-    }
-    estado : {
-        sigla : string
-    },
     cep : string
+    logradouro : string,
+    complemento: string,
+    bairro : string
+    localidade: string,
+    uf: string,
+    ibge: string,
+    gia: string,
+    ddd: string,
+    siafi: string
 }
