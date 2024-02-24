@@ -3,11 +3,11 @@ import { Nunito } from "next/font/google";
 
 // Arquivo configuração de personalização do tema do MUI
 
-const nunito = Nunito({
-   weight: ['300', '400', '500', '700'],
-   subsets: ['latin'],
-   display: 'swap',
-})
+// const nunito = Nunito({
+//    weight: ['300', '400', '500', '700'],
+//    subsets: ['latin'],
+//    display: 'swap',
+// })
 
 declare module '@mui/joy/styles' {
    interface Palette {
@@ -41,10 +41,10 @@ const theme = extendTheme({
       }
       
    },
-   fontFamily: {
-      body: nunito.style.fontFamily,
-      display: nunito.style.fontFamily
-   }
+   // fontFamily: {
+   //    body: nunito.style.fontFamily,
+   //    display: nunito.style.fontFamily
+   // }
    // palette: {
    //    primary: {
    //       main: '#121212', // preto padrão

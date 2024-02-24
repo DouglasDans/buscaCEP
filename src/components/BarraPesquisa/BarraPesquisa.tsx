@@ -66,11 +66,4 @@ const styles = {
       width: '35px',
       height: '35px',
    },
-   inputNumber: {
-      '::-webkit-inner-spin-button' : {
-         '-webkit-appearance': 'none',
-         '-moz-appearance': 'none',
-         'appearance': 'none'
-      }
-   }
 }

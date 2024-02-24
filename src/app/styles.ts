@@ -9,7 +9,7 @@ const styles = {
   },
   cepContainer: {
     width:'800px',
-    height: '300px',
+    height: 'auto',
     borderRadius: 'var(--joy-radius-sm)'
   }
 }

@@ -13,8 +13,6 @@ export default class ApiHandler {
    public async request(method : "get", params : string, body? : object) {
       const endpoint : string = `${params}/json/`
 
-      console.log(this.API_BASE + `${params}/json/`)
-
       return await this.handler[method](endpoint)
       .then((res : any) => {
          return res.data;
