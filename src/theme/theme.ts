@@ -1,21 +1,12 @@
 import { extendTheme } from '@mui/joy';
-import { Nunito } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 
 // Arquivo configuração de personalização do tema do MUI
 
-// const nunito = Nunito({
-//    weight: ['300', '400', '500', '700'],
-//    subsets: ['latin'],
-//    display: 'swap',
-// })
-
-declare module '@mui/joy/styles' {
-   interface Palette {
-     palette: {
-       ast: string;
-     };
-   }
- }
+const ubuntu = Ubuntu({
+   weight: ['300', '400', '500', '700'],
+   subsets: ['latin-ext'],
+})
 
 const theme = extendTheme({
    colorSchemes: {
@@ -34,16 +25,12 @@ const theme = extendTheme({
                icon: '#7A7A7A'
             },
             
-         },
-         
-         
-         
-      }
-      
+         }, 
+      }     
    },
-   // fontFamily: {
-   //    body: nunito.style.fontFamily,
-   //    display: nunito.style.fontFamily
+   fontFamily: {
+      body: ubuntu.style.fontFamily,
+      display: ubuntu.style.fontFamily
    // }
    // palette: {
    //    primary: {
@@ -62,8 +49,7 @@ const theme = extendTheme({
    //       secondary: "#7A7A7A", // cor secundaria - color9
    //       disabled: "rgba(122,122,122,0.5)" // secundária acima mas com 0.5 opacity
    //    }
-   // },
-   
+   },
 })
 
 export default theme
