@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" data-color-scheme="dark">
+    <html lang="pt-BR">
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>

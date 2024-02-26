@@ -1,17 +1,26 @@
 'use client'
 
-import {Box, Button, Input} from '@mui/joy'
+import {Box, Button, Input, useColorScheme} from '@mui/joy'
 import React, { useRef, useState } from 'react'
-import {SearchRounded} from "@mui/icons-material";
+import {DarkMode, DarkModeRounded, Light, LightMode, LightModeRounded, SearchRounded} from "@mui/icons-material";
 import { useRouter } from 'next/navigation'
 
-export default function BarraPesquisa() {
+type Props = {
+   cepAtual : string
+}
+
+export default function BarraPesquisa({cepAtual} : Props) {
    const router = useRouter()
    const [cep, setCep] = useState('')
    const [loading, setLoading] = useState(false)
 
    function handleSubmit(e : any) {
       e.preventDefault()
+      
+      if (e.target.cep.value === cepAtual){
+         return 
+      }
+
       setLoading(true)
       router.push(`/${e.target.cep.value}`)
    }
@@ -29,22 +38,34 @@ export default function BarraPesquisa() {
                 variant="soft"
                 placeholder='Digite o CEP...'
                 size="lg"
-                sx={styles.inputNumber}
             />
          </form>
       </Box>
    )
 }
+
+
 function InputDecoratorButtons({loading} : {loading: any}) {
-   console.log(loading)
+   const { mode, setMode } = useColorScheme();
    return (
        <Box sx={styles.btnContainer}>
          {
             loading && 
             <Button loading variant="plain">
-               Plain
             </Button>
          }
+         <Button 
+            itemType={'button'} 
+            sx={styles.button} 
+            variant={"plain"} 
+            type='button' 
+            onClick={(e) => {
+               e.preventDefault()
+               setMode(mode === 'dark' ? 'light' : 'dark')
+            }}
+            >
+               {mode === 'dark' ? <LightModeRounded/> : <DarkModeRounded/>}
+         </Button>
          <Button itemType={'submit'} sx={styles.button} variant={"plain"} type='submit'>
             <SearchRounded/>
          </Button>
@@ -60,6 +81,7 @@ const styles = {
    btnContainer : {
       display: 'flex',
       alignItems: 'center',
+      gap: '1rem'
    },
    button : {
       borderRadius: '30rem',

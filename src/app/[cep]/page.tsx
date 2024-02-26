@@ -6,9 +6,9 @@ import CepDadosGrid from "@/components/CepDadosGrid/CepDadosGrid";
 import ApiHandler from "@/api/ApiHandler";
 
 export default async function Page({ params }: { params: { cep: string } }) {
-  
+  const cepAtual : string = params.cep || ""
   const api = new ApiHandler();
-  const responseAPIData = await api.request("get", params.cep);
+  const responseAPIData = await api.request("get", cepAtual);
 
   return (
       <Box sx={styles.mainContainer}>
@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: { cep: string } }) {
             <Typography sx={{fontSize:'1.5rem'}}>busca</Typography>
             <Typography level="h2">CEP</Typography>
           </Box>
-           <BarraPesquisa/>
+           <BarraPesquisa cepAtual={cepAtual}/>
           <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
              <CepDadosGrid response={responseAPIData}/>
           </Box>

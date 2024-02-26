@@ -9,7 +9,7 @@ import ApiHandler from '@/api/ApiHandler';
 export default async function Home() {
 
   const api = new ApiHandler();
-  const responseAPIData = await api.request("get", "01001000");
+  const responseAPIData = await api.request("test", "01001000");
 
   return (
     <Box sx={styles.mainContainer}>
@@ -18,7 +18,7 @@ export default async function Home() {
           <Typography sx={{fontSize:'1.5rem'}}>busca</Typography>
           <Typography level="h2">CEP</Typography>
         </Box>
-        <BarraPesquisa/>
+        <BarraPesquisa cepAtual={"01001000"}/>
         <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
           <CepDadosGrid response={responseAPIData}/>
         </Box>
