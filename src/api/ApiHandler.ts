@@ -1,4 +1,4 @@
-import { APIResponse } from "@/interfaces/APIResponse";
+import { APIResponse } from "@/interfaces/ICepResponse";
 import axios from "axios"
 
 export default class ApiHandler {
