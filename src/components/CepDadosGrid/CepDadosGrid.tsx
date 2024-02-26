@@ -1,10 +1,10 @@
 import { Box } from '@mui/joy'
 import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
-import ICepResponse from "@/interfaces/ICepResponse";
+import { APIResponse } from "@/interfaces/ICepResponse";
 
 type Props = {
-    response : ICepResponse
+    response : APIResponse
 }
 
 export default function CepDadosGrid({response}: Props) {

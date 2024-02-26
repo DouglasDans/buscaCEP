@@ -1,4 +1,4 @@
-export default interface ICepResponse {
+export interface APIResponse {
     cep : string
     logradouro : string,
     complemento: string,
