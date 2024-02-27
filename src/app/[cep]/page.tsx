@@ -13,10 +13,10 @@ export default async function Page({ params }: { params: { cep: string } }) {
 
   return (
       <Box sx={styles.mainContainer}>
-        {/* <Box display={'flex'} justifyContent={'center'} alignItems={"end"}>
+        <Box display={'flex'} justifyContent={'center'} alignItems={"end"}>
           <Typography sx={{fontSize:'1.5rem'}}>busca</Typography>
           <Typography level="h2">CEP</Typography>
-        </Box> */}
+        </Box>
         <Box gap={'0.5rem'} display={'flex'} alignItems={"stretch"}>
           <Box display={'flex'} gap={'0.5rem'} flexDirection={'column'}>
             <BarraPesquisa cepAtual={cepAtual}/>
