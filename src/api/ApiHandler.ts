@@ -1,4 +1,4 @@
-import { APIResponse } from "@/interfaces/ICepResponse";
+import { APIResponse, ErrorAPIResponse } from "@/interfaces/APIResponse";
 import axios from "axios"
 
 export default class ApiHandler {
@@ -22,6 +22,12 @@ export default class ApiHandler {
       return await this.handler[method](endpoint)
       .then((res : any) => {
          return res.data;
+      }).catch((e : any) => {
+         const error : ErrorAPIResponse = {
+            code: e.code,
+            message: e.message
+         }
+         return error
       })
    }
    

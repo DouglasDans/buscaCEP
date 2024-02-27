@@ -10,3 +10,8 @@ export interface APIResponse {
     ddd: string,
     siafi: string
 }
+
+export interface ErrorAPIResponse{
+    code : string,
+    message : string
+}

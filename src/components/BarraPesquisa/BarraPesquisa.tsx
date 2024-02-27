@@ -6,7 +6,7 @@ import {DarkMode, DarkModeRounded, Light, LightMode, LightModeRounded, SearchRou
 import { useRouter } from 'next/navigation'
 
 type Props = {
-   cepAtual : string
+   cepAtual? : string
 }
 
 export default function BarraPesquisa({cepAtual} : Props) {
@@ -36,6 +36,7 @@ export default function BarraPesquisa({cepAtual} : Props) {
                 type='text'
                 name='cep'
                 variant="soft"
+                color="neutral"
                 placeholder='Digite o CEP...'
                 size="lg"
             />

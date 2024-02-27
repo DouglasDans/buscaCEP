@@ -7,12 +7,12 @@ export interface IAppProps {
 
 export function Historico (props: IAppProps) {
   return (
-     <Box bgcolor={'background.level1'} sx={styles.gridCepDados} p={2}>
-       <Typography level='title-md'>Histórico</Typography>
-       <Box>
-        <ItemHistorico/>
-       </Box>
-     </Box>
+     <Box bgcolor={'background.level1'} sx={styles.gridCepDados} p={2} gap={1}>
+         <Typography level='title-md'>Histórico</Typography>
+         <Box>
+            <ItemHistorico/>
+         </Box>
+      </Box>
   );
 }
 

@@ -1,7 +1,7 @@
 import { Box } from '@mui/joy'
 import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
-import { APIResponse } from "@/interfaces/ICepResponse";
+import { APIResponse } from "@/interfaces/APIResponse";
 
 type Props = {
     response : APIResponse
