@@ -1,10 +1,10 @@
 import { Box } from '@mui/joy'
 import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
-import ICepResponse from "@/interfaces/ICepResponse";
+import { APIResponse } from "@/interfaces/ICepResponse";
 
 type Props = {
-    response : ICepResponse
+    response : APIResponse
 }
 
 export default function CepDadosGrid({response}: Props) {
@@ -14,11 +14,13 @@ export default function CepDadosGrid({response}: Props) {
         )
     } else {
         return (
-            <Box bgcolor={'#131618'} sx={styles.gridCepDados} p={2}>
+            <Box bgcolor={'background.level1'} sx={styles.gridCepDados} p={2}>
                 <ItemCep type={'Logradouro'} cepItem={response.logradouro}/>
                 <ItemCep type={'Bairro'} cepItem={response.bairro}/>
-                <ItemCep type={'Cidade'} cepItem={response.cidade.nome}/>
-                <ItemCep type={'Estado'} cepItem={response.estado.sigla}/>
+                <ItemCep type={'Cidade'} cepItem={response.localidade}/>
+                <ItemCep type={'Estado'} cepItem={response.uf}/>
+                <ItemCep type={'DDD'} cepItem={response.ddd}/>
+                <ItemCep type={'IBGE'} cepItem={response.ibge}/>
                 <ItemCep type={'CEP'} cepItem={response.cep}/>
             </Box>
         )

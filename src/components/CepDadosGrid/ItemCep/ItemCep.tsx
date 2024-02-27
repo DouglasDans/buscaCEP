@@ -1,7 +1,6 @@
 import { HomeRounded } from '@mui/icons-material'
 import { Box, Typography } from '@mui/joy'
 import React from 'react'
-import {object} from "prop-types";
 
 type Props = {
     type : string,
