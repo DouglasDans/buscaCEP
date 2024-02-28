@@ -1,0 +1,17 @@
+.linkItemHistorico{
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.itemHistorico{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   border-radius: var(--joy-radius-sm);
+}
+
+.textoRua {
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+ }

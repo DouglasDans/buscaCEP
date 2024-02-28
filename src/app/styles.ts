@@ -4,13 +4,15 @@ const styles = {
     width: '100vw',
     height: '100vh',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    gap: '0.5rem'
   },
   cepContainer: {
     width:'800px',
     height: 'auto',
-    borderRadius: 'var(--joy-radius-sm)'
+    borderRadius: 'var(--joy-radius-sm)',
   }
 }
 

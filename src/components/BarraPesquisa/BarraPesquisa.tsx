@@ -1,12 +1,12 @@
 'use client'
 
 import {Box, Button, Input, useColorScheme} from '@mui/joy'
-import React, { useRef, useState } from 'react'
-import {DarkMode, DarkModeRounded, Light, LightMode, LightModeRounded, SearchRounded} from "@mui/icons-material";
+import React, { useState } from 'react'
+import {DarkModeRounded, Light, LightMode, LightModeRounded, SearchRounded} from "@mui/icons-material";
 import { useRouter } from 'next/navigation'
 
 type Props = {
-   cepAtual : string
+   cepAtual? : string
 }
 
 export default function BarraPesquisa({cepAtual} : Props) {
@@ -36,6 +36,7 @@ export default function BarraPesquisa({cepAtual} : Props) {
                 type='text'
                 name='cep'
                 variant="soft"
+                color="neutral"
                 placeholder='Digite o CEP...'
                 size="lg"
             />
