@@ -13,5 +13,5 @@ export interface APIResponse {
 
 export interface ErrorAPIResponse{
     code : string,
-    message : string
+    message : string,
 }
