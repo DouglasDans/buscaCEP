@@ -8,10 +8,10 @@ export default function Placeholder({}: Props) {
    return (
    <Box height={'300px'} display={'flex'} flexDirection={'column'} alignItems={'center'}
    justifyContent={'center'} p={5}>
-      <Typography level='h1'>
+      <Typography level='h1' sx={{color: 'text.icon'}}>
          <MarkunreadMailboxRounded />
       </Typography>
-      <Typography level='title-lg'>Digite um CEP para começar</Typography>
+      <Typography level='title-lg' sx={{color: 'text.tertiary'}}>Digite um CEP para começar</Typography>
    </Box>
    )
 }

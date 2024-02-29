@@ -14,7 +14,7 @@ export default function CepDadosGrid({response}: Props) {
         )
     } else {
         return (
-            <Box bgcolor={'background.level1'} sx={styles.gridCepDados} p={2}>
+            <Box bgcolor={'background.body'} sx={styles.gridCepDados} p={2}>
                 <ItemCep type={'Logradouro'} cepItem={response.logradouro}/>
                 <ItemCep type={'Bairro'} cepItem={response.bairro}/>
                 <ItemCep type={'Cidade'} cepItem={response.localidade}/>
