@@ -6,7 +6,7 @@ type Props = {}
 
 export default function Placeholder({}: Props) {
    return (
-   <Box height={'300px'} display={'flex'} flexDirection={'column'} alignItems={'center'}
+   <Box  display={'flex'} flexDirection={'column'} alignItems={'center'}
    justifyContent={'center'} p={5}>
       <Typography level='h1' sx={{color: 'text.icon'}}>
          <MarkunreadMailboxRounded />
