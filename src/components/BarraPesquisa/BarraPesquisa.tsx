@@ -26,7 +26,7 @@ export default function BarraPesquisa({cepAtual} : Props) {
    }
 
    return (
-      <Box width={'800px'} height={'45px'}>
+      <Box height={'45px'}>
          <form onSubmit={handleSubmit} style={styles.barraPesquisaContainer}>
             <Input
                 endDecorator={<InputDecoratorButtons loading={loading}/>}

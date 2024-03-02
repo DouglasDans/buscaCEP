@@ -1,0 +1,14 @@
+.gridCepDados {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 6px;
+}
+
+@media (max-width: 850px) {
+    .gridCepDados{
+        display: flex;
+        flex-direction: column;
+    }
+}
