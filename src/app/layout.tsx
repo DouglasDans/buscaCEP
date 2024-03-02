@@ -14,14 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <body>
-        <ThemeRegistry>
+    <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width"/>
+    </Head>
+    <body>
+      <ThemeRegistry>
           {children}
-        </ThemeRegistry>
-      </body>
+      </ThemeRegistry>
+    </body>
     </html>
   )
 }
