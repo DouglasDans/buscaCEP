@@ -3,6 +3,8 @@ import React from 'react'
 import ItemCep from './ItemCep/ItemCep'
 import { APIResponse } from "@/interfaces/APIResponse";
 
+import styles from './cepDadosGrid.module.css'
+
 type Props = {
     response : APIResponse
 }
@@ -14,7 +16,7 @@ export default function CepDadosGrid({response}: Props) {
         )
     } else {
         return (
-            <Box bgcolor={'background.body'} sx={styles.gridCepDados} p={2}>
+            <Box bgcolor={'background.body'} className={styles.gridCepDados} p={2}>
                 <ItemCep type={'Logradouro'} cepItem={response.logradouro}/>
                 <ItemCep type={'Bairro'} cepItem={response.bairro}/>
                 <ItemCep type={'Cidade'} cepItem={response.localidade}/>
@@ -25,14 +27,4 @@ export default function CepDadosGrid({response}: Props) {
             </Box>
         )
     }
-}
-
-const styles = {
-   gridCepDados: {
-      width: '100%',
-      height: 'auto',
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      borderRadius: 'var(--joy-radius-sm)'
-   }
 }

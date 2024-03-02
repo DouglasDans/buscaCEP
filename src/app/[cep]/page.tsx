@@ -1,13 +1,14 @@
 import BarraPesquisa from "@/components/BarraPesquisa/BarraPesquisa";
 import { Box, Snackbar, Typography } from "@mui/joy";
 
-import styles from "../styles";
 import CepDadosGrid from "@/components/CepDadosGrid/CepDadosGrid";
 import ApiHandler from "@/api/ApiHandler";
 import { APIResponse, ErrorAPIResponse } from "@/interfaces/APIResponse";
 import { Error } from "@mui/icons-material";
 import Placeholder from "@/components/Placeholder/Placeholder";
 import { Metadata, ResolvingMetadata } from "next";
+
+import styles from "../home.module.css"
 
 export async function generateMetadata({ params }: { params: { cep: string } }, 
    parent: ResolvingMetadata): Promise<Metadata> {
@@ -26,7 +27,7 @@ export default async function Page({ params }: { params: { cep: string } }) {
 
 
    return (
-      <Box sx={styles.mainContainer}>
+      <Box className={styles.mainContainer}>
          <Box display={'flex'} justifyContent={'center'} alignItems={"end"}>
             <Typography sx={{fontSize:'1.5rem'}}>busca</Typography>
             <Typography level="h2">CEP</Typography>
@@ -34,7 +35,7 @@ export default async function Page({ params }: { params: { cep: string } }) {
          <Box gap={'0.5rem'} display={'flex'} alignItems={"stretch"}>
             <Box display={'flex'} gap={'0.5rem'} flexDirection={'column'}>
                <BarraPesquisa cepAtual={cepAtual} />
-               <Box sx={styles.cepContainer} p={2} bgcolor={'background.level1'}>
+               <Box className={styles.cepContainer} p={2} bgcolor={'background.level1'}>
                   {
                      isErrorAPIResponse(responseAPIData) ?
                         <Placeholder/>
